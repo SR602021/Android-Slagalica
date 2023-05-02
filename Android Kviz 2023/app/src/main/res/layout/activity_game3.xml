@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Game3Activity"
-    android:background="@drawable/crvena">
+    android:background="@drawable/plava">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -136,7 +136,9 @@
             android:id="@+id/et_finalResult"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:hint="Final Result"
+            android:hint="Konacno Resenje"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:inputType="text"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
