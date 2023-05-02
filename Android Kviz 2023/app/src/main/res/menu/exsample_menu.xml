@@ -7,14 +7,14 @@
         android:id="@+id/Item2"
         android:icon="@drawable/ic_baseline_person_24"
 
-        android:title="Sing Up"
+        android:title="Prijavi se"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/Item3"
         android:icon="@drawable/ic_baseline_person_24"
 
-        android:title="Sing In"
+        android:title="Registruj se"
         app:showAsAction="never" />
 
 </menu>

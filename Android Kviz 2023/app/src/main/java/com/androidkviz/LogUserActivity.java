@@ -2,8 +2,10 @@ package com.androidkviz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.view.View;
+import android.widget.Button;
 
 
 public class LogUserActivity extends AppCompatActivity {
@@ -15,6 +17,27 @@ public class LogUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_user);
 
+        Button btn1 = findViewById(R.id.profile);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LogUserActivity.this,MyProfileActivity.class));
+            }
+        });
+        Button btn2 = findViewById(R.id.play);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LogUserActivity.this,Game1Activity.class));
+            }
+        });
+        Button btn3 = findViewById(R.id.playFriend);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LogUserActivity.this,Game1Activity.class));
+            }
+        });
 
 
 

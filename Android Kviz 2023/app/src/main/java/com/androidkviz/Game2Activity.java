@@ -7,18 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Game1Activity extends AppCompatActivity {
+public class Game2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game1);
+        setContentView(R.layout.activity_game2);
 
-        Button btn1 = findViewById(R.id.dalje);
+        Button btn1 = findViewById(R.id.naredna);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Game1Activity.this,Game2Activity.class));
+                startActivity(new Intent(Game2Activity.this,Game3Activity.class));
             }
         });
     }

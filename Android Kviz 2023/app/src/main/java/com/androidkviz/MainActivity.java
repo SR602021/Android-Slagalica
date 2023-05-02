@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,Game1Activity.class));
             }
         });
+
     }
     @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {

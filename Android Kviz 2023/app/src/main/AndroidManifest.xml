@@ -10,12 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidKviz" >
         <activity
+            android:name=".Game3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MyProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Game2Activity"
+            android:exported="false" />
+        <activity
             android:name=".Game1Activity"
             android:exported="false" />
         <activity
             android:name=".LogUserActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AndroidKviz.NoActionBar" />
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"

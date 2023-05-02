@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Prijavi se"
         android:textColor="@color/white"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -33,7 +33,7 @@
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Korisnicko ime"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -57,7 +57,7 @@
         android:drawableLeft="@drawable/ic_security"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Lozinka"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/btn_bg"
-        android:text="Login"
+        android:text="Prijavi se"
         app:layout_constraintEnd_toEndOf="@+id/inputPassword"
         app:layout_constraintStart_toStartOf="@+id/inputPassword"
         app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
@@ -97,14 +97,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dont have an Account"
+            android:text="Nemate kreiran nalog?"
             android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/textViewSingUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SingUp?"
+            android:text="Registrujte se"
             android:textColor="@color/black" />
 
     </LinearLayout>
