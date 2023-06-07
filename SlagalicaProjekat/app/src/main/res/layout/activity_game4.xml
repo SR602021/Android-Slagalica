@@ -1,0 +1,92 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/plava"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/tvGameTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="KORAK PO KORAN"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnTerm1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polje 1" />
+
+        <Button
+            android:id="@+id/btnTerm2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polje 2" />
+        <Button
+            android:id="@+id/btnTerm3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polje 3" />
+
+        <Button
+            android:id="@+id/btnTerm4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polje 4" />
+        <Button
+            android:id="@+id/btnTerm5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polje 5" />
+        <Button
+            android:id="@+id/btnTerm6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polje 6" />
+
+        <Button
+            android:id="@+id/btnTerm7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polje 7" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etSolution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Konacno resenje"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+    <TextView
+        android:id="@+id/tajmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="preostalo vreme : "
+        android:textColor="@color/white"
+        android:textSize="24sp"/>
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Osvojeni bodovi: 0"
+        android:gravity="center"
+        android:layout_marginTop="16dp" />
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sledeca igra"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp" />
+
+
+</LinearLayout>
