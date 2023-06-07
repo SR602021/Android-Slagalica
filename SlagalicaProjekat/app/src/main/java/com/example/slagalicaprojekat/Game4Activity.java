@@ -64,44 +64,41 @@ public class Game4Activity extends AppCompatActivity {
         timerTextView = findViewById(R.id.tajmer);
         pointsTextView = findViewById(R.id.tvScore);
 
-        // Read the data from the database
+
         readDataFromFirebase();
     }
 
 
     private void readDataFromFirebase() {
-        // Assuming your data is stored under the "objects" node in your Firebase database
+
         DatabaseReference objectsRef = databaseReference.child("KorakPoKorak");
 
-        // Attach a listener to retrieve the data once
+
         objectsRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     List<KorakPoKorak> objectList = new ArrayList<>();
 
-                    // Iterate through the children of the "objects" node
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        // Get the data for each child and convert it to ObjectModel
+
                         KorakPoKorak object = snapshot.getValue(KorakPoKorak.class);
                         if (object != null) {
                             objectList.add(object);
                         }
                     }
 
-                    // Choose a random object from the list
+
                     Random random = new Random();
                     int randomIndex = random.nextInt(objectList.size());
                     selectedObject = objectList.get(randomIndex);
 
-                    // Start updating the buttons
                     startButtonUpdates();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle any errors that occur
                 Log.e("Firebase", "Error retrieving data from Firebase: " + databaseError.getMessage());
             }
         });
@@ -237,7 +234,7 @@ public class Game4Activity extends AppCompatActivity {
 
     private void showPointsDialog(int points) {
         if (isPointsDialogShown) {
-            return; // Ako je dijalog već prikazan, izlazimo iz metode
+            return;
         }
 
         isPointsDialogShown = true;
@@ -249,8 +246,8 @@ public class Game4Activity extends AppCompatActivity {
         builder.setTitle("Bodovi");
         builder.setMessage("Osvojili ste " + points + " bodova!");
         builder.setPositiveButton("OK", (dialog, which) -> {
-            isPointsDialogShown = false; // Dijalog je zatvoren, dozvoljavamo prikazivanje sledećeg dijaloga
-            // Handle the OK button click if needed
+            isPointsDialogShown = false;
+
         });
         AlertDialog dialog = builder.create();
         dialog.show();
