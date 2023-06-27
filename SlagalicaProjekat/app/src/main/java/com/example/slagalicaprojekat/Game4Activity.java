@@ -68,7 +68,7 @@ public class Game4Activity extends AppCompatActivity {
         readDataFromFirebase();
     }
 
-
+//Metoda readDataFromFirebase() čita podatke iz Firebase Realtime Database, konkretno čita podatke sa putanje "KorakPoKorak".
     private void readDataFromFirebase() {
 
         DatabaseReference objectsRef = databaseReference.child("KorakPoKorak");
@@ -109,6 +109,12 @@ public class Game4Activity extends AppCompatActivity {
     }
 
 
+
+    //Metoda updateButton() ažurira trenutni dugme u igri. Ona postavlja tekst na trenutnom
+    // dugmetu na osnovu odabranog objekta iz baze podataka. Takođe, postavlja osluškivač događaja na polje za unos teksta,
+    // koji proverava da li je korisnik unio tačno rešenje. Ako je korisnik uneo tačno rešenje, zaustavlja se ažuriranje dugmadi,
+    // računa se broj osvojenih bodova, i prikazuje se dijalog sa bodovima. U suprotnom, prikazuje se dijalog
+    // za pogrešno rešenje i priprema se sledeće dugme za ažuriranje.
     private void updateButton() {
         if (currentButtonIndex < buttonList.size()) {
             Button currentButton = buttonList.get(currentButtonIndex);
@@ -152,6 +158,7 @@ public class Game4Activity extends AppCompatActivity {
         }
     }
 
+    //Metoda showWrongSolutionAlert() prikazuje dijalog sa porukom "Pogresno resenje" kada korisnik unese netačno rešenje.
     private void showWrongSolutionAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Pogresno resenje");
@@ -162,6 +169,8 @@ public class Game4Activity extends AppCompatActivity {
         dialog.show();
     }
 
+    //Metoda renderNextButton() ažurira sledeće dugme u nizu dugmadi. Postavlja tekst na sledećem dugmetu
+    // na osnovu odabranog objekta iz baze podataka, povećava indeks trenutnog dugmeta, i pokreće tajmer.
     private void renderNextButton() {
         if (currentButtonIndex < buttonList.size()) {
             Button currentButton = buttonList.get(currentButtonIndex);
@@ -186,17 +195,21 @@ public class Game4Activity extends AppCompatActivity {
         return currentButtonIndex;
     }
 
+    //Metoda startTimer() pokreće tajmer koji odbrojava određeno vreme.
     private void startTimer() {
         if (timer != null) {
             timer.cancel();
         }
 
         timer = new CountDownTimer(TIMER_DURATION, 1000) {
+
+            //onTick() - koja se izvršava svake sekunde i ažurira prikaz preostalog vremena na timerTextView
             @Override
             public void onTick(long millisUntilFinished) {
                 long secondsRemaining = millisUntilFinished / 1000;
                 timerTextView.setText(String.valueOf(secondsRemaining));
             }
+            //onFinish() - koja se izvršava kada tajmer dostigne nula sekundi.
 
             @Override
             public void onFinish() {
@@ -231,7 +244,9 @@ public class Game4Activity extends AppCompatActivity {
             timer = null;
         }
     }
-
+//Metoda showPointsDialog() prikazuje dijalog sa osvojenim bodovima. Provjerava da li je dijalog već prikazan,
+// a zatim čuva osvojene bodove i prikazuje dijalog sa porukom koja sadrži broj bodova. Kada korisnik zatvori dijalog,
+// metoda označava da je dijalog zatvoren.
     private void showPointsDialog(int points) {
         if (isPointsDialogShown) {
             return;
@@ -253,6 +268,7 @@ public class Game4Activity extends AppCompatActivity {
         dialog.show();
     }
 
+    //Metoda savePoints() čuva osvojene bodove korisnika.
     private void savePoints(int points) {
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         this.totalPoints = preferences.getInt("totalPoints", 0);
@@ -262,12 +278,12 @@ public class Game4Activity extends AppCompatActivity {
         editor.putInt("totalPoints", this.totalPoints);
         editor.apply();
     }
-
+//Metoda getTotalPoints() vraća ukupan broj bodova koji je korisnik osvojio.
     private int getTotalPoints() {
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         return preferences.getInt("totalPoints", 0);
     }
-
+// Ovo se koristi za resetovanje bodova na početno stanje. Ovo se koristi za resetovanje bodova na početno stanje.
     private void resetPoints() {
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
