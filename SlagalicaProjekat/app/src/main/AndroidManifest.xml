@@ -11,23 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SlagalicaProjekat"
-        tools:targetApi="31"
-        >
+        tools:targetApi="31">
+        <activity
+            android:name=".Game5Activity"
+            android:exported="false" />
         <activity
             android:name=".Game4Activity"
             android:exported="false" />
-    <activity
-        android:name=".MainActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
         <activity
-            android:name=".Game3Activity"
-            android:exported="false" />
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MyProfileActivity"
             android:exported="false" />
@@ -49,8 +48,6 @@
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.SlagalicaProjekat.NoActionBar" />
-
     </application>
-
 
 </manifest>

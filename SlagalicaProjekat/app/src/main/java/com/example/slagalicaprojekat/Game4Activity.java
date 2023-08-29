@@ -49,6 +49,14 @@ public class Game4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4);
 
+        Button btn = findViewById(R.id.btnConfirm);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Game4Activity.this,Game5Activity.class));
+            }
+        });
+
         FirebaseApp.initializeApp(this);
         resetPoints();
         databaseReference = FirebaseDatabase.getInstance().getReference();
